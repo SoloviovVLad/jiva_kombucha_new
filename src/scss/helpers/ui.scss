@@ -1,0 +1,375 @@
+.blog_btn {
+	position: relative;
+	flex-shrink: 0;
+	width: 5.2rem;
+	height: 5.2rem;
+}
+
+.blog_btn__bg {
+	@include stretch;
+
+	overflow: hidden;
+	border-radius: 50%;
+
+	transition: transform 0.5s ease;
+
+	cursor: pointer;
+
+	&::before {
+		content: '';
+		@include stretch;
+		z-index: 5;
+
+		background-color: $green_1;
+
+		transition: background 0.5s ease;
+	}
+
+	.blog_btn:hover & {
+		transform: scale(1.35);
+
+		&::before {
+			background-color: $dark_green;
+		}
+	}
+}
+
+.blog_btn__link {
+	position: relative;
+	z-index: 10;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+
+	font-weight: 300;
+	font-size: 1.4rem;
+	letter-spacing: 0.2em;
+	color: $white;
+
+	span {
+		position: relative;
+
+		margin-left: 0.3rem;
+		height: 2.6rem;
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: .6rem;
+			left: 0;
+
+			width: 100%;
+			height: 1px;
+			z-index: 10;
+			background-color: currentColor;
+			opacity: 0;
+
+			transition: opacity 0.5s ease;
+		}
+
+		.blog_btn:hover & {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.title_block {
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			padding-bottom: 3.9rem;
+		}
+
+		@include bp($point_0 - 1, $point_2) {
+			padding-bottom: 7rem;
+		}
+
+		@include bp($point_3, $point_4) {
+			padding-bottom: 2.9rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 1.9rem;
+		}
+	}
+}
+
+.title_block__title {
+	position: relative;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	color: $dark_green;
+
+	b {
+		@include bp($point_2, min) {
+			font-size: 5rem;
+		}
+	}
+
+
+	@include bp($point_1, min) {
+		font-size: 4.6rem;
+		letter-spacing: 0.063em;
+	}
+
+	@include bp($point_1 - 1, $point_4) {
+		padding-bottom: .5rem;
+
+		font-size: 3rem;
+		letter-spacing: 0.04em;
+	}
+
+	@include bp($point_4 - 1) {
+		padding-bottom: .5rem;
+
+		font-size: 2.2rem;
+		letter-spacing: 0.04em;
+	}
+}
+
+.title_block__wrap {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: $black_1;
+	}
+
+	@include bp($point_0, min) {
+		padding-bottom: 2.5rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		padding-bottom: 1.8rem;
+	}
+
+	@include bp($point_1 - 1) {
+		padding-bottom: .5rem;
+	}
+}
+
+.title_block__logo_link {
+	display: block;
+	height: 100%;
+
+	@include bp($point_5, min) {
+		width: 100%;
+		max-width: max-content;
+		margin-left: 2rem;
+	}
+
+	@include bp($point_5 - 1) {
+		max-width: max-content;
+		max-height: 10rem;
+		margin-left: 1rem;
+	}
+}
+
+.title_block__img {
+	display: block;
+	height: 100%;
+	width: 100%;
+
+	// @include bp($point_5, min) {
+	// 	max-width: max-content;
+	// 	margin-left: 2rem;
+	// }
+
+	// @include bp($point_5 - 1) {
+	// 	width: 50%;
+	// 	max-width: max-content;
+	// 	max-height: 10rem;
+	// 	margin-left: 1rem;
+	// }
+}
+
+.circle_btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 9rem;
+	height: 9rem;
+	border-radius: 50%;
+
+	transition: background .3s ease;
+
+	span {
+		display: block;
+		width: 100%;
+		margin-left: .3rem;
+
+		font-weight: 300;
+		font-size: 1.6rem;
+		font-family: $font_1;
+		letter-spacing: 0.305em;
+		line-height: 1;
+		text-align: center;
+
+		color: currentColor;
+		transition: color .3s ease;
+	}
+
+	&:not(.circle_btn--white_mod) {
+		border: 2px solid $dark_green;
+		color: $dark_green;
+
+		&:hover {
+			background-color: $dark_green;
+
+			span {
+				color: $white;
+			}
+		}
+	}
+
+	&.circle_btn--white_mod {
+		border: 2px solid $white;
+		color: $white;
+
+		&:hover {
+			background-color: $white;
+
+			span {
+				color: $dark_green;
+			}
+		}
+	}
+
+	&.circle_btn--bg_mod {
+		color: $white;
+		border: none;
+		background-color: $green_2;
+
+		&:hover {
+			background-color: $dark_green;
+		}
+	}
+}
+
+.circle_btn__icon_w {
+	width: 6.4rem;
+	height: 1.4rem;
+	margin: 0 auto;
+
+	overflow: hidden;
+
+	transition: color .3s ease;
+
+	.circle_btn:not(.circle_btn--white_mod) & {
+		color: $dark_green;
+	}
+
+	.circle_btn:not(.circle_btn--white_mod):hover & {
+		color: $white;
+	}
+
+	.circle_btn--white_mod & ,
+	.circle_btn.circle_btn--bg_mod & {
+		color: $white;
+
+	}
+
+	.circle_btn--white_mod:hover & {
+		color: $dark_green;
+	}
+}
+
+.circle_btn__icon {
+	width: 100%;
+	height: 100%;
+
+	transition: transform .3s ease;
+
+	.circle_btn:not(.circle_btn--prev_mod):hover & {
+		transform: translateX(-47%);
+	}
+
+	.circle_btn.circle_btn--prev_mod:hover & {
+		transform: translateX(47%);
+	}
+}
+
+.section_title {
+	text-transform: uppercase;
+
+	color: $black;
+
+	@include bp($point_0, min) {
+		font-size: 3.2rem;
+		letter-spacing: 0.05em;
+		line-height: 1.63;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 2.2rem;
+		letter-spacing: 0.05em;
+		line-height: 1.63;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 1.6rem;
+		letter-spacing: 0.039em;
+		line-height: 1.25;
+	}
+}
+
+.section_subtitle {
+	@include bp($point_4, min) {
+		font-size: 2rem;
+		line-height: 1.3;
+		letter-spacing: 0.05em;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		letter-spacing: 0.09em;
+	}
+}
+
+.section_text {
+	@include bp($point_4, min) {
+		font-size: 2rem;
+		line-height: 1.3;
+		letter-spacing: 0.05em;
+	}
+
+	@include bp($point_4) {
+		font-family: $openSans;
+		font-size: 1.2rem;
+		line-height: 1.67;
+		letter-spacing: 0.05em;
+	}
+}
+
+.section_descr {
+	font-family: $openSans;
+
+	@include bp($point_4, min) {
+		font-size: 1.4rem;
+		line-height: 1.87;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 1.2rem;
+		line-height: 1.67;
+	}
+}
+
+.swiper-button-disabled {
+	opacity: .3;
+
+	pointer-events: none;
+}
