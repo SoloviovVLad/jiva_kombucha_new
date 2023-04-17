@@ -1,6 +1,6 @@
 //---------------------------------------------fonts
-$font_1: 'Oswald', sans-serif;
-$openSans: 'OpenSans', sans-serif;
+$font_1: 'Lato', sans-serif;
+$caveat: 'Caveat', sans-serif;
 
 $font_size_base: 1.6rem;
 //---------------------------------------------fonts###
@@ -14,19 +14,15 @@ $color_link_base: #4aa3df;
 
 $body_bg: $white;
 
-$dark_green: #013D3D;
-$green_1: #008556;
-$green_2: #006A6A;
-$green_3: #9DDEBF;
-$green_4: #6EEEA1;
-
-$black_1: #474747;
-
+$title: #2D2B2B;
+$text: #575452;
+$green_1: #BFD51E;
+$coffee: #F6EEE3;
 //---------------------------------------------colors###
 
 //---------------------------------------------layout
 
-$page_width: 168rem;
+$page_width: 147.4rem;
 
 //---------------------------------------------layout###
 
@@ -38,7 +34,7 @@ $gl_radius: 0.5rem;
 
 //---------------------------------------------media points
 
-$point_0: 1441px;
+$point_0: 1367px;
 $point_1: 1200px;
 $point_2: 1024px;
 $point_3: 1023px;

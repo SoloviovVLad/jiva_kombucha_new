@@ -1,9 +1,22 @@
 extends layout/layout
 
 block vars
-	//- include ./templates/mixins/m-banner-block
+	include ./templates/mixins/m-hero
 	- array = {body_class:'', title_inner:'Index'}
 
 block content_block
-	//- include ./blocks/main-hero
-	h1 rasrfsaf
+	+hero({
+		img: 'hero_1.jpg',
+		mob: 'hero_1_768.jpg',
+		media: 769,
+		title: 'Газований напій',
+		breadcrumbs: [
+			{
+				title: 'Головна',
+				icon: true
+			},
+			{
+				title: 'Газований напій'
+			}
+		]
+	})

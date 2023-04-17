@@ -41,3 +41,17 @@
 		}
 	}
 }
+
+@mixin title {
+	font-family: $caveat;
+	font-weight: 700;
+	font-size: 6.5rem;
+
+	color: $title;
+}
+
+@mixin text {
+	font-size: 1.8rem;
+
+	color: $text;
+}
