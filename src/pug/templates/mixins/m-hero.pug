@@ -1,0 +1,23 @@
+mixin hero(data)
+	section.section.hero
+		.section_in
+			.hero__bg
+				+picture({
+					class: 'hero__img_w',
+					class_img: 'hero__img',
+					img: `images/hero/${data.img}`,
+					media: data.media,
+					mob: `images/hero/${data.mob}`,
+					alt: 'hero img'
+				})
+				.hero__overlay
+			.hero__content
+				h3.hero__title!= data.title
+				.hero__breadcrumbs
+					each item in data.breadcrumbs
+						if item
+							a(href='#')!=item.title
+							if item.icon
+								.hero__icon
+									+icon('breadcrumbs_arrow', 'icon--size_mod')
+

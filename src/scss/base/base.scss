@@ -3,30 +3,21 @@
 :root {
 	--full-screen: calc(var(--vh, 1vh) * 100);
 
-	// --height-footer: 28.6rem;
-	--footer-indent-right: 7.6rem;
-
 	@include bp($point_0, min) {
-		--gl-indent: 12rem;
+		--gl-indent: 22.3rem;
 	}
 
-	@include bp($point_0 - 1, $point_1) {
-		--gl-indent: 7rem;
+	@include bp($point_0 - 1, $point_4 + 1) {
+		--gl-indent: 9rem;
 	}
 
-	@include bp($point_1 - 1, $point_4) {
-		--gl-indent: 3.9rem;
-	}
-	@include bp($point_4 - 1) {
-		--gl-indent: 1.5rem;
+	@include bp($point_4, $point_5) {
+		--gl-indent: 5rem;
 	}
 
-	@include bp($point_2, min) {
-		--height-header: 9.2rem;
-	}
+	@include bp($point_5 - 1) {
+		--gl-indent: 2rem;
 
-	@include bp($point_3 - 1) {
-		--height-header: 7.2rem;
 	}
 }
 
