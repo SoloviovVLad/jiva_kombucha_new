@@ -1,0 +1,17 @@
+mixin article_img(data)
+	section.section.article_img
+		.section_in
+			.article_img__content
+				article.article_img__text
+					each item in data.article
+						if item.title
+							h3!= item.title
+						if item.text
+							each p in item.text
+								p!= p
+				+picture({
+					class: 'article_img__img_w',
+					class_img: 'article_img__img',
+					img: `images/article_img/${data.img}`,
+					alt: 'article img'
+				})
