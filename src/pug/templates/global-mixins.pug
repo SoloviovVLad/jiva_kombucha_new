@@ -14,9 +14,11 @@ mixin icon(name, mod)
 
 mixin picture(data)
 	picture(class!= data.class)
-		source(media=`(min-width: ${data.media}px)`, type="image/jpeg", srcset!= data.img, data-srcset!= data.img)
 		if data.mob
+			source(media=`(min-width: ${data.media}px)`, type="image/jpeg", srcset!= data.img, data-srcset!= data.img)
 			source(media=`(max-width: ${data.media - 1}px)`, type="image/jpeg", srcset!= data.mob, data-srcset!= data.mob)
+		else
+			source(type="image/jpeg", srcset!= data.img, data-srcset!= data.img)
 		img(class!= data.class_img, data-src!= data.img, alt=data.alt)
 
 mixin loop_while(counter)
