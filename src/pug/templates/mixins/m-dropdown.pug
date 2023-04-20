@@ -1,0 +1,9 @@
+mixin dropdown(data)
+	.dropdown
+		.dropdown__title
+			h4!= data.title
+			.dropdown__arrow_w
+				.dropdown__arrow
+					+icon('arrow', 'icon--size_mod')
+		.dropdown__text_w
+			.dropdown__text!= data.text
