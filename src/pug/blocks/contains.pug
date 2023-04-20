@@ -25,11 +25,11 @@ include ../templates/mixins/m-dropdown
 section.section.contains
 	.section_in
 		.contains__content
-			.main_title Jiva містить:
+			.contains__title.main_title Jiva містить:
 			.contains__dropdowns
 				each item in dropdowns
 					+dropdown(item)
-			.main_title Jiva не містить:
+			.contains__title.main_title Jiva не містить:
 			.contains_cancel
 				each item in cancel
 					.contains_cancel__item
