@@ -1,0 +1,35 @@
+-
+	dropdowns = [
+		{
+			title: '',
+			text: ''
+		},
+		{
+			title: '',
+			text: ''
+		},
+		{
+			title: '',
+			text: ''
+		}
+	]
+	cancel = [
+		'консерванти',
+		'стабілізатори',
+		'емульгатори',
+	]
+section.section.contains
+	.section_in
+		.contains__content
+			.main_title Jiva містить:
+			.contains__dropdowns
+				each item in dropdowns
+					//- +dropdown(item)
+			.main_title Jiva не містить:
+			.contains_cancel
+				each item in cancel
+					.contains_cancel__item
+						.contains_cancel__icon
+							+icon('cross', 'icon--size_mod')
+						.contains_cancel__text!= item
+

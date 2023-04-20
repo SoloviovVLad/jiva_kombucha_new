@@ -1,0 +1,36 @@
+.article_img {
+	padding: 10rem var(--gl-indent);
+}
+
+.article_img__content {
+	display: flex;
+}
+
+.article_img__text {
+	width: 54.5%;
+
+	h3 {
+		@include title;
+
+		&:not(:last-child) {
+			margin-bottom: 6.1rem
+		}
+	}
+
+	p {
+		@include text;
+
+		max-width: 71.6rem;
+	}
+}
+
+.article_img__img_w {
+	display: block;
+	width: 50%;
+	height: 100%;
+
+	margin-left: 5rem;
+	margin-top: -0.6rem;
+}
+
+.article_img__img {}
