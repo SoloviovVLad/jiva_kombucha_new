@@ -73,15 +73,42 @@
 @mixin title {
 	font-family: $caveat;
 	font-weight: 700;
-	font-size: 6.5rem;
 
 	color: $title;
+
+	@include bp($point_0, min) {
+		font-size: 6.5rem;
+	}
+
+	@include bp($point_0 - 1, $point_6) {
+		font-size: 5.9rem;
+		line-height: 1.1;
+	}
+
+	@include bp($point_6 - 1) {
+		font-size: 2.2rem;
+	}
 }
 
 @mixin text {
-	font-size: 1.8rem;
 	font-weight: 400;
 	line-height: 1.95;
 
 	color: $text;
+
+	@include bp($point_0, min) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_0 - 1, $point_4 + 1) {
+		font-size: 1.6rem;
+	}
+
+	@include bp($point_4, $point_6) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_6 - 1) {
+		font-size: 1.4rem;
+	}
 }
