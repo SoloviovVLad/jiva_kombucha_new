@@ -1,9 +1,17 @@
 .article_img {
 	padding: 10rem var(--gl-indent);
+
+	&.article_img--bg_mod {
+		background-color: $coffee;
+	}
 }
 
 .article_img__content {
 	display: flex;
+
+	.article_img--reverse_mod & {
+		flex-direction: row-reverse;
+	}
 }
 
 .article_img__text {
@@ -26,11 +34,21 @@
 
 .article_img__img_w {
 	display: block;
+	min-width: 56rem;
 	width: 50%;
 	height: 100%;
 
-	margin-left: 5rem;
-	margin-top: -0.6rem;
+
+	.article_img:not(.article_img--reverse_mod) & {
+		margin-left: 5rem;
+		margin-top: -0.6rem;
+	}
+
+	.article_img.article_img--reverse_mod & {
+		margin-right: 5rem;
+	}
 }
 
-.article_img__img {}
+.article_img__img {
+	@include cover_img;
+}
