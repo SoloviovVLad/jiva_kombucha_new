@@ -46,6 +46,9 @@ body {
 	&.body--open_menu {
 		overflow: hidden;
 	}
+	&.body--bg_mod_1 {
+		background-color: $coffee;
+	}
 
 	@supports (display: grid) {
 		display: block;

@@ -15,3 +15,7 @@ mixin article_img(data)
 					img: `images/article_img/${data.img}`,
 					alt: 'article img'
 				})
+			if data.btn || data.btn_mod
+				.article_img__btn_w
+					button.main-button(class= data.btn_mod)
+						a(href="#") Замовити
