@@ -1,0 +1,372 @@
+.ingredients {
+	@include bp(1550px, min) {
+		padding: 10.5rem 6rem 10.5rem var(--gl-indent);
+	}
+
+	@include bp(1549px, $point_0) {
+		padding: 10.5rem 6rem 10.5rem 9rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		padding: 10.8rem var(--gl-indent);
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 4rem var(--gl-indent);
+	}
+
+	& .section_in {
+		max-width: 164rem;
+	}
+}
+
+.ingredients__content {
+	display: flex;
+
+	@include bp($point_0, min) {
+		align-items: flex-start;
+	}
+
+	@include bp($point_0 - 1) {
+		flex-direction: column-reverse;
+	}
+}
+
+.ingredients__wrapper {
+	max-width: 117rem;
+
+	@include bp(1550px, min) {
+		margin-right: 4.5%;
+	}
+
+	@include bp(1549px, $point_0) {
+		margin-right: 3.2%;
+	}
+}
+
+.ingredients_item {
+	position: relative;
+
+	display: flex;
+
+	&:not(:last-child) {
+		@include bp(1550px, min) {
+			margin-bottom: 5.5rem;
+		}
+
+		@include bp(1549px, $point_0) {
+			margin-bottom: 4.2rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.ingredients_item__img_w {
+	display: block;
+	flex-shrink: 0;
+	width: 100%;
+	height: 100%;
+	transition: all .4s ease-in-out;
+
+	@include bp(1550px, min) {
+		max-width: 33.3rem;
+		max-height: 33.3rem;
+		margin-right: 5rem;
+		border: 2px solid $white;
+	}
+
+	@include bp(1549px, $point_0) {
+		max-width: 25.7rem;
+		max-height: 25.7rem;
+		margin-right: 3.8rem;
+		border: 2px solid $white;
+	}
+
+	@include bp($point_0 - 1) {
+		position: absolute;
+
+		height: 100%;
+
+		border: 2px solid $green_1;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		top: 2.4rem;
+		right: 3.4rem;
+
+		max-width: 10rem;
+		max-height: 10rem;
+	}
+
+	@include bp($point_4 - 1) {
+		top: 2rem;
+		right: 1.5rem;
+
+		max-width: 5rem;
+		max-height: 5rem;
+	}
+}
+
+.ingredients_item__img {
+	@include cover_img;
+}
+
+.ingredients_item__content {
+	display: flex;
+	flex-direction: column;
+	transform-origin: 0 0;
+	width: 100%;
+
+	background-color: $white;
+
+	border: 1px solid $green_1;
+
+	transition: transform .4s, background-color .4s;
+
+	@include bp(1550px, min) {
+		padding: 7.5rem 3.5rem 2.1rem;
+	}
+
+	@include bp(1549px, $point_0) {
+		padding: 5.3rem 2.7rem 2.1rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		padding: 3.3rem 3.5rem 2.2rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 3.6rem 2rem 3.1rem 2rem;
+	}
+
+	@include bp($point_0, min) {
+		&:hover {
+			background-color: $green_1;
+
+			@include bp(1550px, min) {
+				transform: scale(1.04);
+			}
+
+			@include bp(1549px) {
+				transform: scale(1.02);
+			}
+		}
+	}
+}
+
+.ingredients_item__title {
+	font-family: $caveat;
+	font-weight: 700;
+
+	color: $title;
+
+	@include bp(1550px, min) {
+		font-size: 6.5rem;
+	}
+
+	@include bp(1549px, $point_0) {
+		font-size: 4.5rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 5.8rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2.2rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_0, $point_4) {
+			margin-bottom: 8rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 2.1rem;
+		}
+	}
+}
+
+.ingredients_item__descr {
+	color: $text;
+
+	margin: auto 0;
+
+	@include bp(1550px, min) {
+		font-size: 1.8rem;
+		line-height: 1.95;
+	}
+
+	@include bp(1549px, $point_0) {
+		font-size: 1.2rem;
+		letter-spacing: 0.014em;
+		line-height: 2.2;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 2rem;
+		line-height: 1.75;
+	}
+
+	@include bp($point_4 - 1) {
+		padding-left: 0.4rem;
+
+		font-size: 1.4rem;
+		line-height: 2;
+	}
+}
+
+.ingredients_list {
+	width: 100%;
+	height: auto;
+
+	letter-spacing: .02em;
+
+	background-color: $white;
+
+	border: 1px dotted $green_1;
+	border-radius: 1rem;
+
+	@include bp(1550px, min) {
+		padding: 3.1rem 6.2rem;
+		max-width: 31.8rem;
+	}
+
+	@include bp(1549px, $point_0) {
+		padding: 2.8rem 5.3rem;
+		max-width: 27.6rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		padding: 2.4rem 2rem 2.4rem 4.5rem;
+		margin-bottom: 8rem;
+		max-width: 23.1rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 2.4rem 2rem 2.4rem 2.9rem;
+		margin-bottom: 4rem;
+		max-width: 18.5rem;
+	}
+}
+
+.ingredients_list__wrap {
+	h4 {
+		font-weight: 600;
+
+		color: $text;
+
+		@include bp(1550px, min) {
+			font-size: 2rem;
+		}
+
+		@include bp(1549, $point_0) {
+			font-size: 1.6rem;
+		}
+
+		@include bp($point_0 - 1) {
+			font-size: 1.3rem;
+		}
+	}
+}
+
+.ingredients_list__list {
+	@include bp(1550px, min) {
+		margin-top: 3.9rem;
+	}
+
+	@include bp(1549px, $point_0) {
+		margin-top: 3.5rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		margin-top: 3rem;
+	}
+
+	@include bp($point_4 - 1) {
+		margin-top: 2.1rem;
+	}
+}
+
+.ingredients_list__item {
+	position: relative;
+
+	font-weight: 400;
+
+	color: $text;
+
+	@include bp(1550px, min) {
+		font-size: 1.8rem;
+		letter-spacing: -.001em;
+	}
+
+	@include bp(1549px, $point_0) {
+		font-size: 1.6rem;
+		letter-spacing: -.001em;
+	}
+
+	@include bp($point_0, min) {
+		padding-left: 2.2rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		padding-left: 1.6rem;
+
+		font-size: 1.3rem;
+		letter-spacing: .01em;
+	}
+
+	@include bp($point_4 - 1) {
+		padding-left: 1.7rem;
+
+		font-size: 1.3rem;
+		letter-spacing: .04em;
+	}
+
+	a {
+		color: currentColor;
+	}
+
+	&:not(:last-child) {
+		@include bp(1550px, min) {
+			margin-bottom: 2.5rem;
+		}
+
+		@include bp(1549px, $point_0){
+			margin-bottom: 2.2rem;
+		}
+
+		@include bp($point_0, $point_4) {
+			margin-bottom: 1.8rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 1.2rem;
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 0;
+
+		width: .6rem;
+		height: .6rem;
+
+		transform: translateY(-50%);
+
+		background-color: currentColor;
+
+		border-radius: 50%;
+	}
+}

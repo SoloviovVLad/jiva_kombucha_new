@@ -1,0 +1,174 @@
+.article_img {
+	&.article_img--bg_mod {
+		background-color: $coffee;
+	}
+
+	@include bp($point_4 + 1, min) {
+		padding: 10rem var(--gl-indent);
+	}
+
+	@include bp($point_4) {
+		padding: 4.4rem var(--gl-indent);
+	}
+}
+
+.article_img__content {
+	display: flex;
+
+	.article_img--reverse_mod & {
+		@include bp($point_1, min) {
+			flex-direction: row-reverse;
+		}
+
+		@include bp($point_1 - 1) {
+			flex-direction: column;
+		}
+	}
+
+	@include bp($point_1 - 1) {
+		flex-direction: column;
+	}
+}
+
+.article_img__text {
+	@include bp($point_1, min) {
+		width: 54.5%;
+	}
+
+	@include bp($point_1 - 1) {
+		width: 100%;
+	}
+
+	h3 {
+		@include title;
+
+		&:not(:last-child) {
+			@include bp($point_0, min) {
+				margin-bottom: 6.9rem;
+			}
+
+			@include bp($point_0 - 1, $point_4 + 1) {
+				margin-bottom: 4.2rem;
+			}
+
+			@include bp($point_4, $point_5) {
+				margin-bottom: 5.6rem;
+			}
+
+			@include bp($point_5 - 1) {
+				margin-bottom: 2.5rem;
+			}
+		}
+
+		&:not(:first-child) {
+			@include bp($point_4 + 1, min) {
+				margin-top: 10rem;
+			}
+
+			@include bp($point_4, $point_5) {
+				margin-top: 5rem;
+			}
+
+			@include bp($point_5 - 1) {
+				margin-top: 3.6rem;
+			}
+		}
+	}
+
+	p {
+		@include text;
+
+		@include bp($point_0, min) {
+			max-width: 71.6rem;
+		}
+
+		@include bp($point_0 - 1, $point_1) {
+			max-width: 55.6rem;
+		}
+
+		@include bp($point_4, $point_5) {
+			line-height: 1.75;
+		}
+
+		@include bp($point_5 - 1) {
+			line-height: 2;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 3.4rem;
+		}
+	}
+}
+
+.article_img__img_w {
+	display: block;
+	height: 100%;
+
+	@include bp($point_0, min) {
+		width: 50%;
+		min-width: 56rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		width: 50%;
+		min-width: 40rem;
+	}
+
+	@include bp($point_1 - 1, $point_4 + 1) {
+		width: 100%;
+		max-width: 60rem;
+		margin: 0 auto;
+	}
+
+	@include bp($point_4) {
+		width: 100%;
+	}
+
+	@include bp($point_1 - 1) {
+		margin-top: 8.6rem;
+	}
+
+	.article_img:not(.article_img--reverse_mod) & {
+
+		@include bp($point_0, min) {
+			margin-top: -0.6rem;
+		}
+
+		@include bp($point_1, min) {
+			margin-left: 5rem;
+		}
+	}
+
+	.article_img.article_img--reverse_mod & {
+		@include bp($point_1, min) {
+			margin-right: 5rem;
+		}
+	}
+}
+
+.article_img__img {
+	@include cover_img;
+}
+
+.article_img__btn_w {
+	text-align: center;
+
+	&:not(:first-child) {
+
+		@include bp($point_0, min) {
+			margin-top: 11.6rem;
+		}
+
+		@include bp($point_0 - 1, $point_4 + 1) {
+			margin-top: 8.2rem;
+		}
+
+		@include bp($point_4, $point_5) {
+			margin-top: 7.5rem;
+		}
+
+		@include bp($point_5 - 1) {
+			margin-top: 4.5rem;
+		}
+	}
+}

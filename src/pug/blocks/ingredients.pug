@@ -1,0 +1,65 @@
+-
+	ingredients = [
+		{
+			img: 'ingredient_1.jpg',
+			title: 'Трава кульбаби',
+			descr: "Трава кульбаби має пребіотичний ефект, сприяє поліпшенню травлення, зниженню рівня холестерину та покращенню здоров'я кишечника."
+		},
+		{
+			img: 'ingredient_2.jpg',
+			title: 'Лопух',
+			descr: 'Лопух століттями використовувався як «Кровоочисник» для очищення крові від токсинів, діуретик, який допомагає виводити надлишок води. У традиційній китайській медицині (ТКМ) лопух часто використовують разом з іншими травами від болю в горлі та застуди.'
+		},
+		{
+			img: 'ingredient_3.jpg',
+			title: 'Деревій',
+			descr: 'Деревій є чудовим стимулятором травлення та може запобігти утворенню жовчних каменів. Він також містить фітохімічний азулен, який має спазмолітичні властивості та розслаблює внутрішні м’язи шлунка, що робить його корисним у випадках травних спазмів.'
+		},
+		{
+			img: 'ingredient_4.jpg',
+			title: 'Календула',
+			descr: 'Календула має протизапальні, протигрибкові, противірусні та антимікробні властивості.'
+		},
+		{
+			img: 'ingredient_5.jpg',
+			title: 'Ромашка',
+			descr: 'Ромашка має доведені спазмолітичні, протизапальні, антимікробні та антиоксидантні властивості.'
+		},
+		{
+			img: 'ingredient_6.jpg',
+			title: 'Трава полину',
+			descr: 'Гіркі речовини трави полину, відомі як абсентин і анабсинтин, стимулюють травлення і роботу жовчного міхура.'
+		},
+	]
+
+	list = [
+		'Трава кульбаби',
+		'Лопух',
+		'Трава полину',
+		'Календула',
+		'Ромашка',
+		'Деревій',
+	]
+section.section.ingredients
+	.section_in
+		.ingredients__content
+			.ingredients__wrapper
+				each item in ingredients
+					.ingredients_item
+						+picture({
+							class: 'ingredients_item__img_w',
+							class_img: 'ingredients_item__img',
+							img: `images/ingredients/${item.img}`,
+							alt: 'article img'
+						})
+						.ingredients_item__content.js-ingredient-content
+							.ingredients_item__title!= item.title
+							.ingredients_item__descr!= item.descr
+			.ingredients_list
+				.ingredients_list__wrap
+					h4 Екстракт із 6 трав:
+					ul.ingredients_list__list
+						each item in list
+							li.ingredients_list__item
+								a(href='#')!= item
+

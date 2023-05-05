@@ -1,0 +1,27 @@
+extends layout/layout
+
+block vars
+	include ./templates/mixins/m-hero
+	include ./templates/mixins/m-article-img
+	- array = {body_class:'body--bg_mod_1', title_inner:'Ingredients'}
+
+block content_block
+	+hero({
+		img: 'hero_2.jpg',
+		title: 'Екстракт із 6 трав у складі Газованого напою',
+		breadcrumbs: [
+			{
+				title: 'Головна',
+				icon: true
+			},
+			{
+				title: 'Газований напій',
+				icon: true,
+			},
+			{
+				title: 'Трави'
+			}
+		]
+	})
+	include ./blocks/ingredients
+

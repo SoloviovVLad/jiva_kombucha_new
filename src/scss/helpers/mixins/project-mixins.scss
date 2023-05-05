@@ -18,7 +18,7 @@
 	position: relative;
 
 	display: block;
-
+	width: max-content;
 	overflow: hidden;
 
 	&::before {
@@ -41,17 +41,148 @@
 		}
 	}
 }
+@mixin hover_noline {
+	position: relative;
+
+	display: block;
+	width: max-content;
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: .1rem;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: currentColor;
+
+		transform: translateX(0%);
+
+		transition: transform .5s ease, opacity .5s ease;
+	}
+
+	&:hover {
+		&::before {
+			transform: translateX(-100%);
+			opacity: .8;
+		}
+	}
+}
 
 @mixin title {
 	font-family: $caveat;
 	font-weight: 700;
-	font-size: 6.5rem;
-
+	line-height: 1;
 	color: $title;
+
+	@include bp($point_0, min) {
+		font-size: 6.5rem;
+	}
+
+	@include bp($point_0 - 1, $point_5) {
+		font-size: 5.9rem;
+		line-height: 1.1;
+	}
+
+	@include bp($point_5 - 1) {
+		font-size: 2.2rem;
+	}
 }
 
 @mixin text {
-	font-size: 1.8rem;
+	font-weight: 400;
 
 	color: $text;
+
+	@include bp($point_0, min) {
+		font-size: 1.8rem;
+		line-height: 1.95;
+	}
+
+	@include bp($point_0 - 1, $point_4 + 1) {
+		font-size: 1.6rem;
+		line-height: 2.15;
+	}
+
+	@include bp($point_4, $point_5) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_5 - 1) {
+		font-size: 1.4rem;
+	}
+}
+
+@mixin main_btn {
+	position:relative;
+
+	font-weight:700;
+	letter-spacing:1px;
+	text-transform:uppercase;
+
+	color:$white;
+	background-color: $title;
+
+	transition:all .5s;
+
+	cursor:pointer;
+
+	@include bp($point_5, min) {
+		width:20rem;
+		height:5rem;
+	}
+
+	@include bp($point_5 - 1) {
+		width:12rem;
+		height:3.5rem;
+	}
+
+  &::after{
+		content:'';
+
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:1;
+
+		width:100%;
+		height:100%;
+		transition: transform .4s;
+		transform:scale(.5,1);
+
+		opacity:0;
+	}
+
+	a{
+		z-index:2;
+		position:absolute;
+		right:50%;
+
+		width:100%;
+
+		font-weight:700;
+
+		transform:translate(50%,-50%);
+
+		color:$white;
+
+		@include bp($point_5, min) {
+			font-size:1.4rem;
+		}
+
+		@include bp($point_5 - 1) {
+			font-size:1.1rem;
+		}
+	}
+
+	&:hover {
+		background-color: #bfd51e;
+
+		&::after{
+			opacity:1;
+			background-color: #bfd51e;
+			transform:scale(1,1)
+		}
+	}
 }

@@ -14,7 +14,7 @@ mixin icon(name, mod)
 
 mixin picture(data)
 	picture(class!= data.class)
-		if data.mob
+		if data.mob && data.media
 			source(media=`(min-width: ${data.media}px)`, type="image/jpeg", srcset!= data.img, data-srcset!= data.img)
 			source(media=`(max-width: ${data.media - 1}px)`, type="image/jpeg", srcset!= data.mob, data-srcset!= data.mob)
 		else
