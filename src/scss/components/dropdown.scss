@@ -15,16 +15,28 @@
 		}
 	}
 
-
+	.faq & {
+		background-color: $coffee;
+	}
 }
 .dropdown__title {
 	position: relative;
 
 	cursor: pointer;
 
+	border-radius: inherit;
+
+	transition: background-color .3s ease;
+
 	&:hover {
 		h4 {
 			transform: translateX(.5rem);
+		}
+	}
+
+	.faq .dropdown:not(.dropdown--open_state) & {
+		&:hover {
+			background-color: $green_1;
 		}
 	}
 
@@ -97,9 +109,21 @@
 .dropdown__text {
 	@include text;
 
-	padding: 0rem 4rem 2.6rem 4.1rem;
-
 	max-width: 98%;
+
+	@include bp($point_4 + 1, min) {
+		padding: 0rem 4rem 2.6rem 4.1rem;
+	}
+
+	@include bp($point_4, $point_6) {
+		padding: 2.6rem 3.4rem 2.6rem;
+	}
+
+	@include bp($point_6 - 1) {
+		padding: 1.5rem 1.5rem 1.3rem;
+		line-height: 2;
+	}
+
 	p {
 		&:not(:last-child) {
 			margin-bottom: 3.5rem;
