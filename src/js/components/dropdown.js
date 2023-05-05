@@ -13,10 +13,12 @@ const dropdown = () => {
 				const currentText = item.querySelector(selectors.text);
 				const currentHeight = currentText.scrollHeight;
 				if (!item.classList.contains(selectors.openMod)) {
+					// eslint-disable-next-line no-use-before-define
 					closeDropdowns();
 					item.classList.add(selectors.openMod);
 					currentText.style.height = `${currentHeight}px`;
 				} else {
+					// eslint-disable-next-line no-use-before-define
 					closeDropdowns();
 				}
 			});

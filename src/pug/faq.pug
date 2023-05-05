@@ -1,0 +1,26 @@
+extends layout/layout
+
+block vars
+	include ./templates/mixins/m-hero
+	- array = {body_class:'', title_inner:'FAQ'}
+
+block content_block
+	+hero({
+		img: 'hero_3.jpg',
+		title: 'Поширені питання про Газований напій Jiva',
+		breadcrumbs: [
+			{
+				title: 'Головна',
+				icon: true
+			},
+			{
+				title: 'Газований напій',
+				icon: true,
+			},
+			{
+				title: 'FAQ'
+			}
+		]
+	})
+	include ./blocks/faq
+
